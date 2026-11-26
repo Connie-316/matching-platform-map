@@ -1,0 +1,331 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>撮合商城 · 平台功能全景</title><style>
+:root{
+--sp-05:2px;--rd-2:2px;
+--fs-10:10px;--fs-11:11px;--fs-12:12px;--fs-13:13px;--fs-14:14px;--fs-15:15px;--fs-16:16px;--fs-18:18px;--fs-22:22px;--fs-24:24px;
+--fw-r:400;--fw-m:600;--fw-b:700;--fw-x:800;
+--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-8:32px;
+--rd-4:4px;--rd-6:6px;--rd-8:8px;--rd-10:10px;--rd-12:12px;--rd-14:14px;--rd-16:16px;--rd-full:999px;
+--sh-1:0 1px 2px rgba(16,24,40,.05);--sh-2:0 4px 14px rgba(31,66,150,.07);--sh-3:0 12px 34px rgba(30,45,100,.10);
+--ink:#101828;--ink2:#25304A;--muted:#5B6474;--soft:#98A2B3;--line:#E4E9F0;--bg:#F5F7FA;--navy:#1F3864;
+--font:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:var(--fs-13)/1.55 var(--font);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1760px;margin:0 auto;padding:var(--sp-4) var(--sp-5) var(--sp-8)}
+header.top{background:linear-gradient(135deg,#152A4A,#1F3864 55%,#2B5080);color:#fff;border-radius:var(--rd-14);padding:var(--sp-5) var(--sp-6) var(--sp-4);position:relative;overflow:hidden}
+header.top:after{content:"";position:absolute;right:-40px;top:-90px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.05)}
+header.top h1{margin:0;font-size:var(--fs-24);letter-spacing:1px;font-weight:var(--fw-x)}
+header.top .sub{margin:var(--sp-2) 0 0;font-size:var(--fs-13);opacity:.9;max-width:1120px}
+.chain{display:flex;gap:var(--sp-1);align-items:center;margin-top:var(--sp-3);flex-wrap:wrap;font-size:var(--fs-11);opacity:.94}
+.chain span{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.2);border-radius:var(--rd-full);padding:var(--sp-05) var(--sp-2)}
+.chain i{font-style:normal;opacity:.45}
+.stats{display:flex;gap:var(--sp-8);margin-top:var(--sp-3);font-size:var(--fs-11);align-items:flex-end}
+.stats b{display:block;font-size:var(--fs-24);line-height:1.1;font-weight:var(--fw-x);font-variant-numeric:tabular-nums}
+.lg{display:flex;gap:var(--sp-5);flex-wrap:wrap;margin-top:var(--sp-3);font-size:var(--fs-11);opacity:.78}
+.lg span{display:flex;align-items:center;gap:var(--sp-1)}
+.lgk{width:3px;height:11px;border-radius:1px;background:#fff;display:inline-block}
+.lgy{width:11px;height:11px;border-radius:2px;background:#F3DFAE;display:inline-block}
+.lgb{font-style:normal;font-size:9px;background:#BFD5F5;color:#12366B;border-radius:3px;padding:0 3px;line-height:1.5}
+.lgd{width:12px;height:11px;border:1px dashed #A9B6C8;border-radius:2px;display:inline-block}
+.bar{display:flex;gap:var(--sp-2);align-items:center;flex-wrap:wrap;margin:var(--sp-4) 0;position:sticky;top:0;z-index:9;background:rgba(245,247,250,.96);backdrop-filter:blur(8px);padding:var(--sp-2) 0;border-bottom:1px solid #E3E8F0}
+.seg{display:flex;background:#fff;border:1px solid var(--line);border-radius:var(--rd-10);padding:var(--sp-05);gap:var(--sp-05)}
+.seg button{border:0;background:none;padding:var(--sp-2) var(--sp-3);font-size:var(--fs-12);cursor:pointer;color:#4B5563;border-radius:var(--rd-8);font-family:inherit}
+.seg button.on{background:var(--navy);color:#fff;font-weight:var(--fw-m)}
+#q{flex:1;min-width:180px;border:1px solid #D5DBE5;border-radius:var(--rd-10);padding:var(--sp-2) var(--sp-3);font-size:var(--fs-12);background:#fff;outline:0;color:var(--ink2);font-family:inherit}
+#q:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(31,56,100,.08)}
+.ends{display:flex;gap:var(--sp-1);flex-wrap:wrap}
+.ends button{border:1.5px solid var(--cl);background:#fff;border-radius:var(--rd-full);padding:var(--sp-1) var(--sp-3);font-size:var(--fs-12);cursor:pointer;color:var(--c);display:flex;align-items:center;gap:var(--sp-1);font-weight:var(--fw-m);font-family:inherit;transition:.14s}
+.ends button i{width:6px;height:6px;border-radius:50%;display:inline-block;background:var(--c);font-style:normal}
+.ends button:hover{background:var(--bg)}
+.ends button.on{background:var(--c);border-color:var(--c);color:#fff;box-shadow:var(--sh-2)}
+.ends button.on i{background:#fff}
+.btn{border:1px solid #D5DBE5;border-radius:var(--rd-10);padding:var(--sp-2) var(--sp-3);background:#fff;font-size:var(--fs-12);cursor:pointer;color:var(--ink2);font-family:inherit}
+.btn:hover{background:#FAFBFD}
+.btn.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.hint{font-size:var(--fs-11);color:var(--soft);margin-left:auto;white-space:nowrap;font-variant-numeric:tabular-nums}
+.board{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--sp-5);align-items:start}
+@media(max-width:1400px){.board{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:940px){.board{grid-template-columns:1fr 1fr}}
+@media(max-width:660px){.board{grid-template-columns:1fr}}
+.col{background:#fff;border:1px solid var(--line);border-radius:var(--rd-14);overflow:hidden;transition:opacity .18s,filter .18s,box-shadow .18s}
+.col.dim{opacity:.3;filter:saturate(.35)}
+.col.hot{box-shadow:var(--sh-3)}
+.chead{padding:var(--sp-3) var(--sp-4) var(--sp-2) var(--sp-4);background:#fff;border-bottom:1px solid #EFF2F7;cursor:pointer;position:relative}
+.chead:hover{background:var(--bg)}
+.chead:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c)}
+.chead .r1{display:flex;align-items:baseline;gap:var(--sp-2)}
+.chead h2{margin:0;font-size:var(--fs-18);color:var(--c);font-weight:var(--fw-b);letter-spacing:.3px}
+.chead .num{margin-left:auto;font-size:var(--fs-11);color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:var(--rd-full);padding:var(--sp-05) var(--sp-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.chead p{margin:var(--sp-1) 0 0;font-size:var(--fs-12);color:var(--muted);line-height:1.5}
+.chead .wt{height:3px;margin-top:var(--sp-2);background:#EDF1F6;border-radius:var(--rd-full);overflow:hidden}
+.chead .wt i{display:block;height:100%;background:var(--c);opacity:.5;border-radius:var(--rd-full)}
+.mods{padding:var(--sp-2) var(--sp-2) var(--sp-3)}
+.mod{position:relative;background:#fff;border:1px solid #E8ECF3;border-radius:var(--rd-10);padding:var(--sp-3) var(--sp-3);margin-bottom:var(--sp-2);cursor:pointer;transition:border-color .14s,box-shadow .14s,transform .14s}
+.mod:last-child{margin-bottom:0}
+.mod:hover{border-color:var(--cl);box-shadow:var(--sh-2);transform:translateY(-1px)}
+.mod:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.mod.open{border-color:var(--cl);box-shadow:var(--sh-2);background:#FCFDFF}
+.mod.plan{border-style:dashed;background:#FAFBFD;box-shadow:none}
+.mod.plan .mh .nm{color:#64748B}
+.mh{display:flex;align-items:center;gap:var(--sp-1)}
+.mh .nm{font-size:var(--fs-15);font-weight:var(--fw-m);color:#2B3648;line-height:1.35;letter-spacing:.2px}
+.mod.feat{border-left:3px solid var(--c);border-radius:0 var(--rd-8) var(--rd-8) 0;padding-left:calc(var(--sp-3) - 3px)}
+.mod.feat .mh .nm{font-weight:var(--fw-b);color:#111827}
+.mh .dg{font-size:var(--fs-10);color:#B45309;line-height:1}
+.mh .sp{flex:1;min-width:var(--sp-1)}
+.mh .kf{font-size:var(--fs-10);color:var(--c);background:#fff;border:1px solid var(--cl);border-radius:var(--rd-4);padding:0 var(--sp-1);line-height:1.45;flex:none;font-weight:var(--fw-m)}
+.mh .ct{font-size:var(--fs-12);color:#8A94A6;font-variant-numeric:tabular-nums;white-space:nowrap}
+.mh .arw{width:10px;text-align:center;font-size:var(--fs-10);color:#98A2B3;opacity:0;transition:transform .14s,color .14s,opacity .14s}
+.mod:hover .mh .arw,.mod.open .mh .arw{opacity:1;color:var(--c)}
+.mod.open .mh .arw{transform:rotate(90deg);color:var(--c)}
+.mv{display:none;font-size:var(--fs-12);color:#7A8497;line-height:1.55;margin-top:var(--sp-1)}
+.mod.open .mv{display:block}
+.fl{display:none;gap:var(--sp-1);margin-top:var(--sp-2);padding-top:var(--sp-2);border-top:1px dashed #E8ECF3}
+.mod.open .fl{display:grid}
+.f{background:#F8FAFD;border:1px solid #EAEFF6;border-radius:var(--rd-6);padding:var(--sp-2)}
+.f .t{display:flex;align-items:flex-start;gap:var(--sp-1);font-size:var(--fs-13);font-weight:var(--fw-m);color:#2B3648;line-height:1.4}
+.f .d{font-size:var(--fs-12);color:#64718A;line-height:1.5;margin-top:var(--sp-1);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mod.open .f .d{-webkit-line-clamp:unset;display:block}
+.f.s{background:#FFF8E8;border-color:#F0CE86}
+.f.s .t{color:#8A5A00}
+.f .v{font-size:var(--fs-11);color:#9A7B3A;line-height:1.5;margin-top:var(--sp-05)}
+.f .ai{font-size:var(--fs-10);color:#1D4ED8;background:#E7F0FE;border-radius:var(--rd-4);padding:0 var(--sp-1);flex:none;margin-top:2px;font-weight:var(--fw-m)}
+.hit{background:#FFE9A8;border-radius:var(--rd-4);padding:0 1px}
+/* 双边价值（底部） */
+.dual{margin-top:var(--sp-4);background:#fff;border:1px solid var(--line);border-radius:var(--rd-14);padding:var(--sp-4) var(--sp-5)}
+.dhead{display:flex;align-items:baseline;gap:var(--sp-2);margin-bottom:var(--sp-3)}
+.dhead h3{margin:0;font-size:var(--fs-15);color:var(--navy);font-weight:var(--fw-b)}
+.dhead small{font-size:var(--fs-11);color:var(--soft)}
+.dbody{display:grid;grid-template-columns:1fr 132px 1fr;gap:var(--sp-4);align-items:stretch}
+@media(max-width:1100px){.dbody{grid-template-columns:1fr}}
+.dside{border:1px solid #EDF0F6;border-radius:var(--rd-10);padding:var(--sp-3)}
+.dside h4{margin:0 0 var(--sp-2);font-size:var(--fs-12);color:var(--muted);font-weight:var(--fw-m)}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2)}
+.dcell{background:#F8FAFD;border:1px solid #EDF0F6;border-radius:var(--rd-8);padding:var(--sp-2) var(--sp-3)}
+.dcell b{display:block;font-size:var(--fs-13);color:var(--ink2);font-weight:var(--fw-b)}
+.dcell i{font-style:normal;font-size:var(--fs-11);color:var(--muted)}
+.dmid{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--sp-1);background:var(--navy);color:#fff;border-radius:var(--rd-10);padding:var(--sp-3);text-align:center}
+.dmid b{font-size:var(--fs-15);letter-spacing:1px;line-height:1.35}
+.dmid em{font-style:normal;font-size:var(--fs-11);opacity:.75}
+/* 场景 */
+.scg{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3)}
+@media(max-width:1100px){.scg{grid-template-columns:1fr}}
+.sc{border:1px solid var(--line);border-radius:var(--rd-10);padding:var(--sp-3)}
+.sc .no{font-size:var(--fs-11);color:var(--soft);font-variant-numeric:tabular-nums}
+.sc .nm{font-size:var(--fs-14);font-weight:var(--fw-b);color:var(--ink2);margin-top:var(--sp-05)}
+.sc dl{margin:var(--sp-2) 0 0;display:grid;gap:var(--sp-1)}
+.sc dt{font-size:var(--fs-11);color:var(--soft)}
+.sc dd{margin:0;font-size:var(--fs-12);color:var(--muted);line-height:1.55}
+.sc .gain{margin-top:var(--sp-2);font-size:var(--fs-12);font-weight:var(--fw-b);color:#166534}
+.sc .gain em{font-style:normal;color:var(--soft);font-weight:var(--fw-r);margin-left:var(--sp-1)}
+/* 核心特色 */
+.feats{margin-top:var(--sp-4);background:#fff;border:1px solid var(--line);border-radius:var(--rd-14);padding:var(--sp-4) var(--sp-5) var(--sp-4)}
+.feats h3{margin:0 0 var(--sp-3);font-size:var(--fs-15);color:var(--navy);font-weight:var(--fw-b)}
+.feats h3 small{font-size:var(--fs-11);color:var(--soft);font-weight:var(--fw-r);margin-left:var(--sp-2)}
+.fg{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-3)}
+@media(max-width:1100px){.fg{grid-template-columns:1fr 1fr}}
+.fc{background:#FFFBF2;border:1px solid #F3E3C4;border-radius:var(--rd-10);padding:var(--sp-3)}
+.fc .t{display:flex;align-items:center;gap:var(--sp-1);font-size:var(--fs-14);font-weight:var(--fw-b);color:#7A4A05}
+.fc .e{font-size:var(--fs-10);color:#8A6A3A;background:#F6EBD6;border-radius:var(--rd-4);padding:0 var(--sp-1);font-weight:var(--fw-m)}
+.fc .d{font-size:var(--fs-12);color:#6B5A3E;line-height:1.55;margin-top:var(--sp-1)}
+/* 规划带 */
+.plan{margin-top:var(--sp-4);background:#fff;border:1px dashed #C9D2E0;border-radius:var(--rd-14);padding:var(--sp-4) var(--sp-5)}
+.plan h3{margin:0 0 var(--sp-1);font-size:var(--fs-15);color:#475569;font-weight:var(--fw-b)}
+.plan h3 small{font-size:var(--fs-11);color:var(--soft);font-weight:var(--fw-r);margin-left:var(--sp-2)}
+.plan .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-4);margin-top:var(--sp-3)}
+@media(max-width:1000px){.plan .pg{grid-template-columns:1fr}}
+.pcol{border-left:3px solid #CBD5E1;padding-left:var(--sp-3)}
+.pcol b{font-size:var(--fs-13);color:#334155}
+.pcol ul{margin:var(--sp-1) 0 0;padding:0;list-style:none}
+.pcol li{font-size:var(--fs-12);color:var(--muted);line-height:1.7}
+.pcol li em{font-style:normal;color:#94A3B8;margin-left:var(--sp-1)}
+/* 优势对比 */
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--rd-14);padding:var(--sp-4) var(--sp-5);margin-bottom:var(--sp-4)}
+.panel h3{margin:0 0 var(--sp-3);font-size:var(--fs-15);color:var(--navy);font-weight:var(--fw-b)}
+.panel h3 small{font-size:var(--fs-11);color:var(--soft);font-weight:var(--fw-r);margin-left:var(--sp-2)}
+.advh,.advr{display:grid;grid-template-columns:150px 90px 60px 1fr 1.35fr;gap:var(--sp-3);align-items:start}
+.advh{padding:var(--sp-1) 10px;font-size:var(--fs-11);color:var(--soft);border-bottom:1px solid var(--line)}
+.advr{padding:var(--sp-2) 10px;border-bottom:1px dashed var(--line);font-size:var(--fs-12);line-height:1.6}
+.advr:nth-child(even){background:#FCFDFE}
+.advr b{font-weight:var(--fw-m);color:var(--ink2)}
+.advr .tag{font-size:var(--fs-10);border-radius:var(--rd-4);padding:0 var(--sp-1);font-weight:var(--fw-m)}
+.tag.u{color:#7A4A05;background:#FBEBC8}.tag.b{color:#1D4ED8;background:#E7F0FE}.tag.n{color:#166534;background:#DCF5E5}
+.advr .old{color:#8A94A6}
+.advr .ed{font-size:var(--fs-11);color:var(--muted)}
+.advr .new{color:var(--navy)}
+.grid5,.row5{display:grid;grid-template-columns:92px 1fr 1fr 1fr 116px;gap:var(--sp-3);align-items:center}
+.grid5{padding:var(--sp-1) 10px;font-size:var(--fs-11);color:var(--soft);border-bottom:1px solid var(--line)}
+.row5{padding:var(--sp-2) 10px;border-bottom:1px dashed var(--line);font-size:var(--fs-12)}
+.row5:nth-child(even){background:#FCFDFE}
+.row5 b{font-weight:var(--fw-m)}
+.row5 em{font-style:normal;font-size:var(--fs-11);color:var(--soft)}
+.gridB,.rowB{display:grid;grid-template-columns:150px 1fr 1.3fr;gap:var(--sp-3);align-items:start}
+.gridB{padding:var(--sp-1) 10px;font-size:var(--fs-11);color:var(--soft);border-bottom:1px solid var(--line)}
+.rowB{padding:var(--sp-3) 10px;border-bottom:1px dashed var(--line);font-size:var(--fs-12);line-height:1.6}
+.rowB b{font-weight:var(--fw-b);color:var(--ink2)}
+.rowB .no{color:#9A3412}
+.src{margin-top:var(--sp-2);font-size:var(--fs-11);color:var(--soft)}
+footer{margin-top:var(--sp-4);font-size:var(--fs-11);color:var(--soft);text-align:center}
+@media print{@page{size:420mm 297mm;margin:6mm}body{background:#fff;zoom:.65;-webkit-print-color-adjust:exact}.bar{display:none}.board{grid-template-columns:repeat(5,1fr)}.col{break-inside:avoid}.mod{break-inside:avoid}.col.dim{opacity:1;filter:none}.feats,.plan,.panel,footer{break-inside:avoid}}
+</style></head><body><div class="wrap">
+
+<header class="top"><h1>撮合商城 · 平台功能全景</h1>
+<p class="sub">商家在商家端建物料、定价、报价、上架；平台只做审核、规则与资金；买家一个入口走完找货到下单一整程；AI 客服接住群聊询价入口，把线索推回这条链。</p>
+<div class="chain"><span>商家端 · 建与报价</span><i>→</i><span>平台运营 · 审与定规则</span><i>→</i><span>门户商城 · 找货问价</span><i>→</i><span>买家中心 · 下单对账</span><i>｜</i><span>AI · 贯穿全流程</span></div>
+<div class="stats"><span><b>5</b>个端</span><span><b>54</b>个类目</span><span><b>301</b>项功能</span><span><b>16</b>个特色类目</span><span title="ERP 订单与履约 / 库存与生产 / 财务与合同，共 3 个类目 12 项"><b>12</b>项待建</span></div>
+<div class="lg"><span><i class="lgk"></i>左色条 + 标签 = 特色类目</span><span><i class="lgy"></i>黄底 = 重点功能</span><span><i class="lgb">AI</i>智能化能力</span><span><i class="lgd"></i>虚线框 = 待建，尚无页面</span></div>
+</header>
+
+
+
+<div class="bar">
+<div class="seg" id="tabs"><button class="on" data-v="over">功能总览</button><button data-v="adv">优势与场景</button><button data-v="collab">协作与边界</button></div>
+<input id="q" placeholder="搜类目或功能，例如：非标、账期、报价">
+<div class="ends" id="ends"></div>
+<div class="seg" id="mode"><button class="on" data-m="all">全部功能</button><button data-m="feat">只看特色</button></div>
+<button class="btn" id="expand">全部展开</button>
+
+</div>
+
+<main id="app"></main>
+<section class="feats" id="feats"><h3>核心特色<small>地图上左侧带色条的类目，就是下面这 16 个</small></h3><div class="fg" id="fg"></div></section>
+
+<section class="dual" id="dual"><div class="dhead"><h3>两边各自得到什么</h3></div>
+  <div class="dbody">
+    <div class="dside"><h4>采购方 · 需求侧</h4><div class="dgrid">
+      <div class="dcell"><b>找得到</b><i>资源多 · 规格全</i></div>
+      <div class="dcell"><b>买得便宜</b><i>价格透 · 集采降本</i></div>
+      <div class="dcell"><b>买得放心</b><i>金融支持 · 数据风控</i></div>
+      <div class="dcell"><b>管得省</b><i>对账清 · 一站式</i></div>
+    </div></div>
+    <div class="dmid"><b>把「找」<br>变成「配」</b><em>启泰 · 撮合平台</em></div>
+    <div class="dside"><h4>供应方 · 供给侧</h4><div class="dgrid">
+      <div class="dcell"><b>有单接</b><i>订单稳 · 商机准</i></div>
+      <div class="dcell"><b>接得准</b><i>智能匹配 · AI 报价</i></div>
+      <div class="dcell"><b>回款准时</b><i>银行金融支持</i></div>
+      <div class="dcell"><b>产能活</b><i>稼动率高 · 产能满</i></div>
+    </div></div>
+  </div></section>
+  </div>
+<script>
+const DATA=[{"e": "商家端 ERP", "d": "商家在这里建物料、定价、报价、上架；平台只读", "c": "#C2410C", "bg": "#FDF1E9", "cl": "#E0A086", "m": [{"n": "商品与物料", "v": "料号、商品、分类、品牌一处建，平台只审批", "plan": false, "c": true, "f": [{"n": "物料管理", "d": "物料、型号别名、供应商成本与价格清单导入", "val": "写法不统一也能认成一条", "s": true, "ai": false}, {"n": "商品管理", "d": "新建、快速上架、导入、待归组、提交挂牌", "val": "", "s": false, "ai": false}, {"n": "分类管理", "d": "分类树与属性模板，平台统一下发只读", "val": "", "s": false, "ai": false}, {"n": "品牌管理", "d": "品牌库与查重，平台审完进品牌库", "val": "", "s": false, "ai": false}, {"n": "配套物料", "d": "主料绑定配套料，一起报价一起算价", "val": "", "s": false, "ai": false}]}, {"n": "价格政策", "v": "客户、协议、活动、运费四套价，先算后报", "plan": false, "c": true, "f": [{"n": "客户加点", "d": "按客户加价，支持导入与 AI 识别", "val": "一个客户一套价，不用手工改", "s": true, "ai": true}, {"n": "客户协议价", "d": "客户 × 物料维度的协议价与审批", "val": "", "s": false, "ai": false}, {"n": "营销活动价", "d": "活动价规则与生效区间", "val": "", "s": false, "ai": false}, {"n": "运费模板", "d": "按区域与重量算运费，直接进报价", "val": "", "s": false, "ai": false}]}, {"n": "报价与核价", "v": "识别、算价、审批、出单，一屏走完", "plan": false, "c": true, "f": [{"n": "极速报价", "d": "粘贴或导入手工价目，AI 识别后直接出报价", "val": "图纸传上来就出价，不用逐条查", "s": true, "ai": true}, {"n": "报价管理", "d": "报价单列表、新建、状态与附件一处管", "val": "", "s": false, "ai": false}, {"n": "报价单详情", "d": "逐行看成本、加点与最终价", "val": "", "s": false, "ai": false}, {"n": "价格审批", "d": "越界价格走审批，谁批的留痕", "val": "", "s": false, "ai": false}]}, {"n": "供应商协同", "v": "发链接、收报价、横向比价", "plan": false, "c": true, "f": [{"n": "供应商档案", "d": "供应商、联系人、可供物料", "val": "", "s": false, "ai": false}, {"n": "供应商回价工作台", "d": "把报价行发链接给供应商，回价后横向比价", "val": "", "s": false, "ai": false}, {"n": "公开回价页", "d": "供应商免登录打开链接就能回价", "val": "供应商不用注册，点链接就能回", "s": true, "ai": false}]}, {"n": "采购", "v": "报价成交转采购，按供应商拆单", "plan": false, "c": false, "f": [{"n": "采购工作台", "d": "报价转采购、拆单、到货与对账", "val": "", "s": false, "ai": false}]}, {"n": "订单与履约", "v": "下单、发货、售后，一条线（尚无页面）", "plan": true, "c": false, "f": [{"n": "订单管理", "d": "客户下单、订单状态、交付跟踪", "val": "", "s": false, "ai": false}, {"n": "采购订单", "d": "向供应商下 PO、到货跟踪", "val": "", "s": false, "ai": false}, {"n": "物流", "d": "承运商、运单、轨迹", "val": "", "s": false, "ai": false}, {"n": "售后", "d": "退换、返修、索赔", "val": "", "s": false, "ai": false}]}, {"n": "库存与生产", "v": "库位、出入库、BOM，一处管（尚无页面）", "plan": true, "c": false, "f": [{"n": "库存与仓库", "d": "库位、库存数量、调拨", "val": "", "s": false, "ai": false}, {"n": "出入库作业", "d": "收货、上架、拣货、发货", "val": "", "s": false, "ai": false}, {"n": "生产与 BOM", "d": "BOM、MRP、排产", "val": "", "s": false, "ai": false}, {"n": "质量管理", "d": "来料与出货检验", "val": "", "s": false, "ai": false}]}, {"n": "财务与合同", "v": "总账、结算、发票、合同，一处对（尚无页面）", "plan": true, "c": false, "f": [{"n": "财务总账", "d": "凭证、科目、报表", "val": "", "s": false, "ai": false}, {"n": "结算与发票", "d": "对账、开票、收款核销", "val": "", "s": false, "ai": false}, {"n": "授信账期", "d": "授信额度、账期占用、逾期", "val": "", "s": false, "ai": false}, {"n": "合同", "d": "合同模板、签署、台账", "val": "", "s": false, "ai": false}]}, {"n": "客户与店铺", "v": "客户档案、店铺资料、账期，一处看", "plan": false, "c": false, "f": [{"n": "客户管理", "d": "客户、联系人、标签与历史成交", "val": "", "s": false, "ai": false}, {"n": "店铺资料", "d": "店铺主体与对外展示信息", "val": "", "s": false, "ai": false}, {"n": "账期", "d": "账期规则与额度，逾期预警", "val": "", "s": false, "ai": false}, {"n": "履约与客服", "d": "发货与售后口径", "val": "", "s": false, "ai": false}]}, {"n": "平台协同", "v": "待办、申请、挂牌、消息，与平台对接", "plan": false, "c": false, "f": [{"n": "工作台", "d": "打开先看今天要处理的报价、待办与消息", "val": "", "s": false, "ai": false}, {"n": "平台待办", "d": "平台派下来的审核任务与资料补正", "val": "", "s": false, "ai": false}, {"n": "主数据申请", "d": "分类、品牌向平台申请，审完回写", "val": "", "s": false, "ai": false}, {"n": "提交挂牌", "d": "把商品提交到平台审核上架", "val": "", "s": false, "ai": false}, {"n": "消息中心", "d": "站内通知一处看，已读未读分得清", "val": "", "s": false, "ai": false}, {"n": "我的套餐", "d": "当前套餐与可用能力，超限有提示", "val": "", "s": false, "ai": false}]}, {"n": "系统与权限", "v": "账号、角色、权限，全程留痕", "plan": false, "c": false, "f": [{"n": "用户管理", "d": "账号、状态与所属角色", "val": "", "s": false, "ai": false}, {"n": "角色管理", "d": "角色与菜单权限位", "val": "", "s": false, "ai": false}, {"n": "系统设置", "d": "全局参数与集成配置", "val": "", "s": false, "ai": false}, {"n": "审计日志", "d": "谁改了什么，全程留痕", "val": "", "s": false, "ai": false}]}]}, {"e": "运营端", "d": "平台在这里配规则、审快照、看全局；不替商家干活", "c": "#1F4E79", "bg": "#EDF2F9", "cl": "#8FA6BC", "m": [{"n": "总览看板", "v": "上班第一眼知道今天要处理什么", "f": [{"n": "数据概览", "d": "登录后按角色展示指标卡与趋势，点卡片下钻到对应列表", "val": "运营上班先看整体，30 秒知道今天先处理什么", "s": false, "ai": false}, {"n": "待办中心", "d": "系统汇总待审商家商品、异常订单与到期资质，按人分派，处理完自动销项", "val": "待办一处处理，不用在四个模块之间来回找", "s": false, "ai": false}, {"n": "经营报表", "d": "选时间与维度出表，可导出与定时推送到负责人", "val": "周会直接出数，不靠手工统计", "s": false, "ai": false}, {"n": "AI 经营问答", "d": "用一句话提问，AI 转成查询并给出结论与图表", "val": "不会做表的人也能查数", "s": false, "ai": true}], "c": false}, {"n": "审核管理", "v": "上架与入驻的质量闸门，审得过来才敢放量", "f": [{"n": "商家入驻审核", "d": "商家提交资料生成快照，平台审核，通过在同一事务里开店建主账号，驳回带原因重提", "val": "商家零部署即可入驻，资料全程可追溯", "s": true, "ai": false}, {"n": "类目申请审核", "d": "商家提交类目申请，平台审新增改名停用，通过后进类目树", "val": "类目有序增长，不被商家乱建", "s": false, "ai": false}, {"n": "品牌申请审核", "d": "商家提交品牌，平台查重与核资质，通过后进品牌库并推 ERP", "val": "品牌库不重复、不夹带山寨", "s": false, "ai": false}, {"n": "商品上架审核", "d": "商家在 ERP 提交挂牌，平台按原因码逐条或批量审，通过即门户在售，驳回带原因回 ERP 重提", "val": "审核可排班可考核，上架前把住质量", "s": true, "ai": false}, {"n": "企业认证审核", "d": "买家或商家交执照与开户资料，平台核验并标待补正，通过后开通下单或账期", "val": "认证资料可追溯，账期开户有依据", "s": false, "ai": false}, {"n": "个人实名认证审核", "d": "个人提交身份信息，平台核验（人脸待定），通过后可询价下单", "val": "买家实名，交易合规", "s": false, "ai": false}, {"n": "资质到期复审", "d": "系统按到期日提前提醒，到期未换证自动冻结并生成复审任务", "val": "不带着过期证照继续经营", "s": false, "ai": false}, {"n": "内容审核", "d": "运营提交公告资讯广告，审核通过才发布，不合规退回并记原因", "val": "内容风险前置，不靠事后删", "s": false, "ai": false}, {"n": "审核规则配置", "d": "配置原因码、自动通过阈值与审核分派，审核页按规则生效", "val": "审核标准统一，换人不换口径", "s": false, "ai": false}, {"n": "AI 商品预审", "d": "商品提交时 AI 查参数、合规词、同款与价格异常，给通过或驳回建议，审核员确认", "val": "审核从全量人工变抽检", "s": true, "ai": true}, {"n": "AI 入驻预审", "d": "提交入驻时 OCR 证照并查资料完整度，标出异常项，审核员只看异常件", "val": "只人工看异常件", "s": false, "ai": true}, {"n": "AI 类目建议", "d": "提交商品时按名称与参数推荐类目，审核员一键采纳", "val": "错分少、返工少", "s": true, "ai": true}, {"n": "AI 内容审核", "d": "发布前识别违规词与图片，命中转人工", "val": "内容风险再前置一层", "s": false, "ai": true}], "c": false}, {"n": "商家管理", "v": "商家的档案、风险与保证金一处管", "f": [{"n": "商家列表与详情", "d": "按条件筛商家，进详情看资料证照与店铺状态，可停用或导出", "val": "一页看全商家", "s": false, "ai": false}, {"n": "分级保证金", "d": "按等级配保证金标准，记录缴纳与退还，调整留痕", "val": "收退有据、可对账", "s": false, "ai": false}, {"n": "商家风险与违规", "d": "系统按履约率、退款率、投诉计分并叠加 AI 评分，触发预警、限流或下架，处置留痕", "val": "风险早发现早处理", "s": false, "ai": true}, {"n": "商家经营看板", "d": "只读 ERP 的成交与履约数据，按商家汇总成看板", "val": "考核有数据，不靠商家自报", "s": false, "ai": false}, {"n": "商家资质档案", "d": "证照与合同上传后按到期日归档，到期自动提醒", "val": "资质一处归档，随时调取", "s": false, "ai": false}, {"n": "商家分级", "d": "配置等级规则与权益，系统按成交自动升降级", "val": "分级决定保证金与服务", "s": false, "ai": false}], "c": false}, {"n": "商品管理", "v": "全平台商品一屏可查，违规有处置", "f": [{"n": "商品列表（挂牌快照）", "d": "汇总 ERP 推送的挂牌快照，按状态商家类目筛，点进详情", "val": "全平台商品一屏可查", "s": true, "ai": false}, {"n": "商品详情", "d": "展示快照与每次审核记录，可对比历史版本", "val": "单品全链路追溯", "s": false, "ai": false}, {"n": "商品类型与规格", "d": "定义商品类型与各自必填项，不同类型走不同审核与价格规则", "val": "不同货走不同规则", "s": false, "ai": false}, {"n": "规格与属性", "d": "类目下配置规格与属性字段，商家按模板填值", "val": "同类商品可比可筛", "s": false, "ai": false}, {"n": "价格与价格政策", "d": "配置指导价与阶梯价规则，商家报价受规则约束，越界提示走审批", "val": "价格口径统一且可审", "s": false, "ai": false}, {"n": "违规处理与强制下架", "d": "发现违规先下架并通知，商家申诉后复核，恢复或维持", "val": "违规有闭环，不是一刀切", "s": false, "ai": false}, {"n": "商品抽检与同款去重", "d": "按参数与图片比对，输出疑似同款清单，人工确认后合并", "val": "减少重复铺货", "s": false, "ai": true}, {"n": "商品版本与变更历史", "d": "每次提交生成版本，保留快照与差异", "val": "审核与纠纷有证据", "s": false, "ai": false}, {"n": "商品导入导出", "d": "下载模板导入，失败行给原因，成功写入并记日志", "val": "批量维护，不用一条条录", "s": false, "ai": false}], "c": true}, {"n": "类目与品牌", "v": "全平台类目品牌一处定，商品与门户共用", "f": [{"n": "类目树维护", "d": "维护三级类目与类目代码，可启停与排序，商品与门户共用", "val": "全平台类目一处定", "s": true, "ai": false}, {"n": "品牌库维护", "d": "维护品牌与资质，变更推送 ERP 只读", "val": "品牌不两头维护", "s": false, "ai": false}, {"n": "属性与规格模板", "d": "类目下配字段、必填、单位与枚举，商品按模板校验", "val": "商品填值有依据", "s": false, "ai": false}, {"n": "类目映射", "d": "维护 ERP 物料分类到平台类目的映射，差异清单可核对", "val": "两边类目对得上", "s": false, "ai": false}, {"n": "主数据推送与差异监控", "d": "记录每次推送，失败重推，差异告警", "val": "数据不漂移", "s": false, "ai": false}, {"n": "类目运营位", "d": "类目页配 Banner 与推荐词，按时间生效", "val": "类目页也能运营", "s": false, "ai": false}], "c": true}, {"n": "套餐管理", "v": "卖什么、给谁开、什么时候收回，由套餐定", "f": [{"n": "套餐配置", "d": "选模块与额度，设价格，可复制启停设默认", "val": "卖什么由套餐定", "s": false, "ai": false}, {"n": "模块目录与上下线", "d": "下线模块时从所有套餐剔除并收回单店例外，再重推 ERP", "val": "改一次全量生效", "s": true, "ai": false}, {"n": "开通与续费", "d": "给商家开通或续期，到期自动收回，提前站内信提醒", "val": "商家生命周期可控", "s": false, "ai": false}, {"n": "单店例外", "d": "给单店临时加模块，到期自动收回并提前 7 天提醒", "val": "个别商家灵活处理", "s": false, "ai": false}, {"n": "套餐变更记录", "d": "每次变更记前后值、操作人与时间，可查可作废", "val": "收费争议可查", "s": false, "ai": false}], "c": true}, {"n": "客户管理", "v": "买家认证、授信与分级一处看", "f": [{"n": "买家列表", "d": "汇总买家档案与认证状态，按成交与账期筛", "val": "买家全貌一页看", "s": false, "ai": false}, {"n": "企业认证档案", "d": "归档执照与开户资料，关联认证状态与有效期", "val": "认证资料可查", "s": false, "ai": false}, {"n": "授信与额度", "d": "买家申请后平台核额，调额冻结全程留痕", "val": "账期给谁、给多少有依据", "s": false, "ai": false}, {"n": "账期规则", "d": "配置账期天数与额度上限，订单结算时按规则校验", "val": "规则统一", "s": false, "ai": false}, {"n": "客户分级与分配", "d": "按成交额分级并分配跟进人，大客户单独维护", "val": "谁跟进谁负责", "s": false, "ai": false}, {"n": "客户风险", "d": "按逾期、投诉、退款率与异常下单评分，高风险进预警", "val": "坏账前置", "s": false, "ai": true}], "c": false}, {"n": "订单管理", "v": "全局看单、异常干预、争议裁决", "f": [{"n": "订单总览（只读）", "d": "汇总 ERP 订单，按状态商家时间筛，可导出", "val": "平台看全局，不改单不代发", "s": false, "ai": false}, {"n": "异常订单监控", "d": "按规则识别超时与异常，标红并指派跟进", "val": "问题单捞得出来", "s": false, "ai": false}, {"n": "售后监管", "d": "汇总售后单，看处理时效与投诉率，超时自动提醒介入", "val": "售后不失控", "s": false, "ai": false}, {"n": "纠纷仲裁", "d": "买家申请仲裁或售后有争议时双方举证，平台裁决，执行并归档", "val": "争议有唯一裁决方，双方敢在线成交", "s": true, "ai": false}, {"n": "软件订单", "d": "软件订单单独归类，管许可、订阅与到期", "val": "软件与服务单独管", "s": false, "ai": false}, {"n": "询价单监管", "d": "汇总询价单，看响应率与超时", "val": "撮合效率可量化", "s": false, "ai": false}, {"n": "报价单监管", "d": "汇总报价，识别异常低价与超时响应，可抽查", "val": "价格不失控", "s": false, "ai": true}], "c": false}, {"n": "财务管理", "v": "流水、结算、发票、费率一处对", "f": [{"n": "交易流水", "d": "汇总收支，按商家与时间筛，可导出", "val": "平台资金全景", "s": false, "ai": false}, {"n": "结算分账", "d": "配置分账规则，按确认收货触发结算，生成对账单", "val": "平台到商家的第二段可管", "s": true, "ai": false}, {"n": "发票管理", "d": "汇总开票申请，看状态与异常，可导出", "val": "开票可查", "s": false, "ai": false}, {"n": "费率规则", "d": "配置佣金与服务费，订单结算按规则计费，改动留痕", "val": "收多少有依据", "s": false, "ai": false}, {"n": "对账与退款审批", "d": "对账差异进清单，退款走审批链，结果回写", "val": "资金差错有出口", "s": false, "ai": false}, {"n": "账期逾期管理", "d": "按到期日算逾期，触发预警，可暂停账期", "val": "坏账前置", "s": false, "ai": false}, {"n": "自营差价", "d": "自营店收入与成本单独核算，输出毛利", "val": "自营单独算账", "s": false, "ai": false}], "c": false}, {"n": "门户运营", "v": "首页与内容不靠发版，运营自己改", "f": [{"n": "顶部导航", "d": "配置入口项与排序，按登录态显隐", "val": "门户第一层框架可配", "s": false, "ai": false}, {"n": "底部框架", "d": "配置页脚信息与链接，全站统一", "val": "合规信息与帮助入口一处改", "s": false, "ai": false}, {"n": "首页装修", "d": "拖拽模块排序，设定时上下架，保存即生效", "val": "首页不靠发版，运营自己改", "s": true, "ai": false}, {"n": "广告位", "d": "上传素材并设投放位与时间，到期自动下架", "val": "首页视觉可运营", "s": false, "ai": false}, {"n": "公告与资讯", "d": "编辑富文本或图片，审核后发布，可置顶", "val": "门户有内容源", "s": false, "ai": false}, {"n": "课程与视频教程", "d": "建课程与章节、上传视频与资料，记录学习进度", "val": "软件商品配套内容", "s": false, "ai": false}, {"n": "帮助文档", "d": "建分类与文章，支持搜索", "val": "自助解决，降低客服量", "s": false, "ai": false}, {"n": "营销活动", "d": "配活动与商品，设时间与门槛，前台展示", "val": "拉新与转化", "s": false, "ai": false}, {"n": "积分商城配置", "d": "配积分获取与兑换规则，上架可兑商品", "val": "积分闭环", "s": false, "ai": false}, {"n": "搜索运营", "d": "配热词、置顶与屏蔽词，看无结果词并聚类成建议", "val": "搜得到、搜得准", "s": false, "ai": true}, {"n": "模块开关", "d": "配首页入口开关与开发中文案，前台立即生效", "val": "上线节奏可控", "s": false, "ai": false}, {"n": "站点基础设置", "d": "配备案号、客服、悬浮窗与底部导航，全站生效", "val": "站点信息一处改", "s": false, "ai": false}], "c": false}, {"n": "消息与通知", "v": "站内与短信触达，按人按场景", "f": [{"n": "站内信", "d": "模板化发送，铃铛与列表展示，已读可查", "val": "站内触达", "s": false, "ai": false}, {"n": "短信与邮件模板", "d": "配模板与变量，按场景触发发送", "val": "站外触达", "s": false, "ai": false}, {"n": "订阅规则", "d": "配谁收什么与频控，发送前校验", "val": "不打扰但送达", "s": false, "ai": false}], "c": false}, {"n": "系统设置", "v": "账号、权限、参数、集成一处配", "f": [{"n": "账号身份", "d": "建号、停用、重置密码，归属到身份", "val": "平台员工账号可控", "s": false, "ai": false}, {"n": "角色权限", "d": "配权限点与数据范围，按钮级生效", "val": "谁能做什么可配", "s": false, "ai": false}, {"n": "组织架构", "d": "建部门树，挂成员与角色", "val": "平台内部管理", "s": false, "ai": false}, {"n": "操作日志", "d": "记录关键动作，按人模块时间查", "val": "操作可追溯", "s": false, "ai": false}, {"n": "参数开关", "d": "配平台参数与功能开关，保存即生效", "val": "灰度与应急", "s": false, "ai": false}, {"n": "备份恢复", "d": "定时备份，一键恢复，留操作记录", "val": "数据安全", "s": false, "ai": false}, {"n": "集成配置", "d": "配 ERP、短信、电子签章、物流与支付参数，各模块读取", "val": "外部依赖一处配", "s": false, "ai": false}, {"n": "导出中心", "d": "各列表发起导出，按字段权限生成，记录下载", "val": "导出不散落可审计", "s": false, "ai": false}, {"n": "个人设置", "d": "改资料、密码与通知偏好", "val": "个人自助", "s": false, "ai": false}], "c": false}]}, {"e": "门户商城", "d": "买家在这里找货、比价、问价；不暴露商家后台", "c": "#0F766E", "bg": "#E9F5F3", "cl": "#87BAB6", "m": [{"n": "顶部与底部", "v": "门户的框架层，入口与合规信息一处改", "f": [{"n": "顶部导航", "d": "配置入口项与跳转，按登录态显示", "val": "访客一眼找到入口", "s": false, "ai": false}, {"n": "搜索框与快捷入口", "d": "首屏放搜索与四个快捷动作，点击直达对应流程", "val": "首屏就能发起动作", "s": false, "ai": false}, {"n": "悬浮工具", "d": "悬浮客服、二维码与购物车，全站跟随", "val": "随时可达", "s": false, "ai": false}, {"n": "底部导航", "d": "页脚放关于我们、帮助、客服与备案号", "val": "合规与帮助入口", "s": false, "ai": false}, {"n": "服务保障带", "d": "展示质保、退换、物流、客服四条保障", "val": "首次访客建立信任", "s": false, "ai": false}], "c": false}, {"n": "首页频道", "v": "首屏到推荐位，决定访客第一眼看到什么", "f": [{"n": "首屏", "d": "主 Banner 加搜索与类目入口，点击进对应频道", "val": "第一眼看到主推", "s": false, "ai": false}, {"n": "采购需求大厅", "d": "聚合采购需求并显示报价热度，点进详情报价", "val": "撮合从需求开始", "s": false, "ai": false}, {"n": "选型工作台", "d": "选类目参数出候选商品与供应商，可对照替代料", "val": "不会选的人也能选", "s": false, "ai": false}, {"n": "最新上架", "d": "按上架时间拉取挂牌商品，点进详情", "val": "新品曝光", "s": false, "ai": false}, {"n": "交易撮合区", "d": "按类目与类型筛商品，进详情或询价", "val": "主交易入口集中", "s": false, "ai": false}, {"n": "供应商能力入口", "d": "展示非标供应商能力卡，点进能力页", "val": "非标先找厂", "s": false, "ai": false}, {"n": "报价大厅与快报", "d": "聚合公开报价，展示行情快报", "val": "价格有参照", "s": false, "ai": false}, {"n": "软件与积分", "d": "软件主卡与积分横条，点击进对应页", "val": "增值业务有曝光", "s": false, "ai": false}, {"n": "品牌馆与今日推荐", "d": "聚合品牌与每日推荐位，点击进列表", "val": "找品牌、看推荐", "s": false, "ai": false}, {"n": "入驻 Banner", "d": "引导商家入驻，点击跳入驻申请", "val": "商家侧转化", "s": false, "ai": false}, {"n": "AI 导购", "d": "买家描述需求，AI 推荐类目与商品，点击进详情", "val": "不会选也能找", "s": false, "ai": true}], "c": false}, {"n": "类目与选型", "v": "从类目进得来，按参数选得准", "f": [{"n": "类目面板", "d": "顶部与左侧共用同一棵类目树，悬停展开，点击进类目页", "val": "三级类目都可达", "s": false, "ai": false}, {"n": "类目页", "d": "类目下展示商品列表、Banner 与推荐词", "val": "类目即频道", "s": false, "ai": false}, {"n": "筛选与排序", "d": "按价格、材质、地区、起订量筛选，结果实时刷新", "val": "快速缩小范围", "s": false, "ai": false}, {"n": "型号对照与替代料", "d": "输入型号出对照与替代建议", "val": "支持选型决策", "s": false, "ai": false}, {"n": "品牌筛选", "d": "按品牌过滤商品", "val": "按牌子找", "s": false, "ai": false}], "c": false}, {"n": "搜索", "v": "搜得到、搜得准，搜不到也有兜底", "f": [{"n": "全站搜索", "d": "一个框搜商品、物料、品牌与商家，结果分类展示", "val": "找得到", "s": false, "ai": false}, {"n": "类目内搜索", "d": "在当前类目内检索", "val": "缩小范围", "s": false, "ai": false}, {"n": "非标关键词识别", "d": "命中加工、CNC、来图等词只出能力供应商", "val": "搜词即找厂", "s": false, "ai": false}, {"n": "热词与联想", "d": "展示热词榜与下拉联想", "val": "少打字", "s": false, "ai": false}, {"n": "无结果推荐", "d": "无结果时给类目与替代建议", "val": "不空手走", "s": false, "ai": false}, {"n": "AI 语义搜索", "d": "自然语言转成查询再检索", "val": "像说话一样找货", "s": false, "ai": true}], "c": false}, {"n": "商品展示", "v": "价格交期起订量一屏可比", "f": [{"n": "商品列表与商品卡", "d": "卡片展示价格区间、供应商与起订量，可切列表", "val": "一屏可比", "s": true, "ai": false}, {"n": "标准件详情", "d": "展示参数、阶梯价与交期，可下载质检报告与材质证明，直接询价或加篮", "val": "看到即可询价", "s": true, "ai": false}, {"n": "铸件与非标详情", "d": "按工艺参数展示，支持上传图纸发起询价", "val": "非标按工艺问价", "s": false, "ai": false}, {"n": "非标能力页", "d": "展示设备、工艺、材质与案例，底部发图纸询价", "val": "先看能力再谈价", "s": false, "ai": false}, {"n": "软件商品详情", "d": "展示套餐与授权，进购买面板，附视频教程与帮助文档", "val": "软件自助了解与购买", "s": false, "ai": false}, {"n": "课程详情", "d": "展示章节与视频，可报名学习", "val": "内容即商品", "s": false, "ai": false}, {"n": "积分商品详情", "d": "展示积分兑换规则与库存", "val": "积分能花", "s": false, "ai": false}, {"n": "价格可见规则", "d": "游客隐藏价格，登录后可见，按平台开关", "val": "价格策略可控", "s": false, "ai": false}], "c": true}, {"n": "询价与报价", "v": "非标也能在线问价、比价、转单", "f": [{"n": "询价篮", "d": "多商品多规格加篮，跨页保存", "val": "一次问多家", "s": false, "ai": false}, {"n": "快速询价（单商品）", "d": "填数量与规格直接提交", "val": "最快一步", "s": false, "ai": false}, {"n": "多商品询价", "d": "一次提交多行，按商家拆分派发", "val": "清单式询价", "s": false, "ai": false}, {"n": "BOM 上传询价", "d": "上传 Excel 或 BOM，解析成行并匹配商品，提交后出询价单", "val": "整单询价", "s": true, "ai": false}, {"n": "非标图纸询价", "d": "上传图纸与工艺要求，生成询价行并分发供应商", "val": "非标在线报价", "s": true, "ai": false}, {"n": "议价", "d": "对报价还价，多轮记录留存", "val": "价格可谈且留痕", "s": false, "ai": false}, {"n": "我的询价跟踪", "d": "列表看询价状态与报价进度，超时提醒", "val": "知道问到哪", "s": false, "ai": false}, {"n": "报价大厅", "d": "展示公开报价与我的报价", "val": "报价可见", "s": false, "ai": false}, {"n": "报价对比", "d": "多商家价格、交期、信用并排比较", "val": "选得准", "s": true, "ai": false}, {"n": "询价转订单", "d": "选中报价生成订单", "val": "询价到下单闭环", "s": false, "ai": false}, {"n": "打样申请", "d": "提交打样需求与收样地址，跟进进度", "val": "非标先打样", "s": false, "ai": false}, {"n": "AI BOM 解析", "d": "AI 把上传的 BOM 拆行并匹配商品", "val": "整单询价提速", "s": false, "ai": true}, {"n": "AI 图纸解析", "d": "AI 提取图纸工艺与参数，生成询价行", "val": "非标报价提速", "s": false, "ai": true}, {"n": "AI 报价参考", "d": "结合历史成交价与工艺给核价区间，不自动成交", "val": "报价有锚点", "s": true, "ai": true}], "c": true}, {"n": "供应商", "v": "找厂先看能力，能力够再谈价", "f": [{"n": "供应商目录", "d": "按类目、地区与能力筛选供应商", "val": "找供应商", "s": false, "ai": false}, {"n": "供应商能力页", "d": "展示设备、工艺、材质、案例与交付", "val": "判断能不能做", "s": false, "ai": false}, {"n": "供应商案例", "d": "展示案例与资质", "val": "建立信任", "s": false, "ai": false}, {"n": "商家入驻入口", "d": "免登录填写入驻资料并提交", "val": "商家零门槛进来", "s": false, "ai": false}], "c": false}, {"n": "软件与课程", "v": "软件与课程自助了解、自助购买", "f": [{"n": "软件套餐", "d": "展示套餐与授权数，进购买面板", "val": "卖软件", "s": false, "ai": false}, {"n": "视频教程", "d": "按章节播放并记录进度", "val": "会用才买", "s": false, "ai": false}, {"n": "帮助指导文档", "d": "提供安装、使用、FAQ 与下载", "val": "自助解决", "s": false, "ai": false}, {"n": "课程学习", "d": "报名后按章节学习并下载资料", "val": "内容变现", "s": false, "ai": false}, {"n": "证书与资料下载", "d": "结业后发放证书与配套资料", "val": "交付物可下载", "s": false, "ai": false}], "c": false}, {"n": "积分与营销", "v": "拉新、转化与复购的活动位", "f": [{"n": "积分商城", "d": "积分兑换商品并记录", "val": "积分闭环", "s": false, "ai": false}, {"n": "积分任务", "d": "签到、评价、首单等任务发放积分", "val": "活跃", "s": false, "ai": false}, {"n": "秒杀与优惠券", "d": "活动商品展示，可领券用券", "val": "转化", "s": false, "ai": false}, {"n": "活动弹窗", "d": "首页弹窗展示活动与规则", "val": "曝光", "s": false, "ai": false}, {"n": "会员等级", "d": "按成长值定等级与权益", "val": "留存", "s": false, "ai": false}], "c": false}, {"n": "交易与支付", "v": "四种支付方式，钱走得清", "f": [{"n": "购物车", "d": "加购改数量，多店拆分展示", "val": "凑单", "s": false, "ai": false}, {"n": "结算页", "d": "按店铺拆单，算运费优惠与发票", "val": "算得清", "s": false, "ai": false}, {"n": "在线支付", "d": "跳支付通道，回调后更新订单并对账", "val": "即付且资金有保障", "s": true, "ai": false}, {"n": "线下打款", "d": "展示平台账户信息，上传凭证后人工核销", "val": "照顾传统采购习惯", "s": false, "ai": false}, {"n": "线下转账", "d": "登记网银转账并核销", "val": "大额支付", "s": false, "ai": false}, {"n": "账期支付", "d": "授信内下单占用额度，到期还款", "val": "先货后款", "s": true, "ai": false}, {"n": "支付结果与订单确认", "d": "结果页展示成功或失败，失败可重试，跳订单详情", "val": "支付闭环", "s": false, "ai": false}], "c": true}, {"n": "登录注册", "v": "三种登录方式，登录墙不丢单", "f": [{"n": "微信扫码登录", "d": "扫码后绑定 unionid，一账号可多登录方式", "val": "最省事登录", "s": false, "ai": false}, {"n": "账号密码登录", "d": "用账号或手机号加密码登录", "val": "兼容入口", "s": false, "ai": false}, {"n": "手机号验证码登录", "d": "发短信验证码并频控，校验后登录", "val": "买家最常用的方式", "s": false, "ai": false}, {"n": "注册", "d": "手机号加验证码注册，自动生成买家组织", "val": "获客第一步", "s": false, "ai": false}, {"n": "个人实名认证", "d": "提交身份信息，通过后可询价下单", "val": "交易合规", "s": false, "ai": false}, {"n": "登录与选组织", "d": "多身份时选一个组织进入，不自动选上次", "val": "不串数据", "s": false, "ai": false}, {"n": "登录墙与回跳", "d": "触发登录后回原页，保留已填内容与购物车", "val": "不丢单", "s": false, "ai": false}], "c": false}, {"n": "内容与帮助", "v": "公告、帮助、客服，问题能自解", "f": [{"n": "公告资讯", "d": "列表与详情展示公告和行业资讯", "val": "内容触达", "s": false, "ai": false}, {"n": "帮助中心", "d": "按分类浏览 FAQ 与操作指引", "val": "自助", "s": false, "ai": false}, {"n": "在线客服", "d": "人工与机器人客服会话", "val": "答疑", "s": false, "ai": false}, {"n": "AI 客服", "d": "AI 自动回复并引用知识库", "val": "少排队", "s": false, "ai": true}, {"n": "开发中入口", "d": "未上线模块点击统一提示开发中", "val": "不误导", "s": false, "ai": false}], "c": false}]}, {"e": "买家中心", "d": "买家在这里询价、下单、对账；一个账号多个组织", "c": "#6D28D9", "bg": "#F2EEFC", "cl": "#B694EC", "m": [{"n": "工作台", "v": "买家每天的第一屏", "f": [{"n": "组织切换", "d": "多买家组织选择，切换后数据隔离", "val": "不串公司", "s": false, "ai": false}, {"n": "工作台概况", "d": "展示身份状态、待办、订单数据与动态", "val": "每天第一屏", "s": false, "ai": false}, {"n": "快捷入口", "d": "询价、订单、对账、发票四个快捷入口", "val": "少点几下", "s": false, "ai": false}], "c": false}, {"n": "采购管理", "v": "询价、比价、审批到下单一条线", "f": [{"n": "我的询价", "d": "按待报价、部分报价、完成分类看询价单与进度", "val": "进度心里有数", "s": true, "ai": false}, {"n": "报价对比", "d": "多商家价格、交期与信用并排比较", "val": "选得准", "s": false, "ai": false}, {"n": "采购报价", "d": "查看并确认商家报价，可快速回价", "val": "响应商家", "s": false, "ai": false}, {"n": "智一报价（BOM）", "d": "上传 BOM 解析成行，生成询价单", "val": "整单询价", "s": false, "ai": false}, {"n": "采购申请与审批", "d": "发起申请单，按审批流转成询价", "val": "企业内控", "s": false, "ai": false}, {"n": "常用清单", "d": "把常购商品存成清单，一键再询价", "val": "复购省事", "s": false, "ai": false}, {"n": "企业物料库", "d": "维护物料编码、分类与别名", "val": "企业自己的一套口径", "s": false, "ai": false}, {"n": "AI 采购助手", "d": "按历史采购提醒补货并给比价建议", "val": "复购不用想", "s": false, "ai": true}], "c": false}, {"n": "订单管理", "v": "全局看单、异常干预、争议裁决", "f": [{"n": "采购订单", "d": "按标准件、铸件、软件、非标分类展示订单", "val": "看全部单", "s": false, "ai": false}, {"n": "订单详情与状态", "d": "展示待支付、待发货、已发货与确认收货节点", "val": "知道到哪一步", "s": false, "ai": false}, {"n": "订单售后", "d": "发起退货换货并跟踪进度", "val": "售后有出口", "s": false, "ai": false}, {"n": "物流跟踪", "d": "展示运单与物流轨迹", "val": "货在哪查看", "s": false, "ai": false}, {"n": "订单评价", "d": "确认收货后评价与追评", "val": "口碑沉淀", "s": false, "ai": false}], "c": false}, {"n": "财务与账期", "v": "额度、账单、对账、还款一处看", "f": [{"n": "账期对账", "d": "按未对账与已对账展示账单明细", "val": "对得清", "s": true, "ai": false}, {"n": "账期余额与额度", "d": "展示已用、剩余与临时额度及明细", "val": "花多少心里有数", "s": false, "ai": false}, {"n": "账单与还款", "d": "展示账期账单与到期提醒，记录还款", "val": "不逾期", "s": false, "ai": false}, {"n": "授信申请", "d": "提交授信资料，跟踪审核与额度结果", "val": "开账期", "s": false, "ai": false}, {"n": "逾期提醒", "d": "展示逾期清单与罚息说明", "val": "减少坏账", "s": false, "ai": false}, {"n": "合同与额度关联", "d": "合同约定的额度与账期在结算时生效", "val": "按合同执行", "s": false, "ai": false}], "c": true}, {"n": "账户钱包", "v": "余额、银行卡、积分与流水", "f": [{"n": "账户余额", "d": "展示可用余额与资金流水", "val": "钱在哪查看", "s": false, "ai": false}, {"n": "银行卡", "d": "绑定解绑银行卡并设默认卡", "val": "付款", "s": false, "ai": false}, {"n": "积分", "d": "展示积分余额与明细", "val": "积分能看", "s": false, "ai": false}, {"n": "资金流水", "d": "按充值、付款、退款、账期分类展示", "val": "每一笔对得上", "s": false, "ai": false}], "c": false}, {"n": "企业管理", "v": "认证、组织、角色、流程与物料", "f": [{"n": "企业认证", "d": "提交企业资料，跟踪审核与电子签章二次认证", "val": "开账期与下单前置", "s": false, "ai": false}, {"n": "组织架构", "d": "维护部门与成员，分配角色", "val": "多人采购", "s": false, "ai": false}, {"n": "角色权限", "d": "配采购员、审批人、财务的可见范围", "val": "各看各的", "s": false, "ai": false}, {"n": "流程管理", "d": "配审批流与金额阈值", "val": "内控", "s": false, "ai": false}, {"n": "物料管理", "d": "维护物料库、分类与别名，支持导入", "val": "统一口径", "s": false, "ai": false}, {"n": "发票抬头", "d": "维护抬头、税号、开户行与地址", "val": "开票信息一处维护", "s": false, "ai": false}], "c": false}, {"n": "会员与账号", "v": "资料、安全、地址与消息", "f": [{"n": "个人资料", "d": "维护姓名、头像、邮箱与手机号", "val": "资料完整", "s": false, "ai": false}, {"n": "邮箱设置", "d": "绑定邮箱并设通知开关", "val": "收对账单与发票", "s": false, "ai": false}, {"n": "账号安全", "d": "改密码、查看设备、退出其他设备", "val": "账号安全", "s": false, "ai": false}, {"n": "登录方式管理", "d": "绑定或解绑微信、手机与密码", "val": "一账号多方式", "s": false, "ai": false}, {"n": "收货地址", "d": "维护地址簿与默认地址，支持批量导入", "val": "收货", "s": false, "ai": false}, {"n": "消息订阅", "d": "按业务与营销分别设通知开关", "val": "不打扰", "s": false, "ai": false}, {"n": "系统消息", "d": "站内信与业务通知列表", "val": "不漏消息", "s": false, "ai": false}], "c": true}, {"n": "关注中心", "v": "收藏与足迹，下次找得到", "f": [{"n": "我的收藏", "d": "收藏商品、供应商与软件", "val": "下次找到", "s": false, "ai": false}, {"n": "我的足迹", "d": "记录浏览历史", "val": "回看", "s": false, "ai": false}], "c": false}, {"n": "服务中心", "v": "发票、帮助、客服与服务订单", "f": [{"n": "发票申请", "d": "按订单申请开票，跟踪进度并下载", "val": "报销", "s": false, "ai": false}, {"n": "发票记录", "d": "展示已开、驳回、红冲与换开", "val": "可追溯", "s": false, "ai": false}, {"n": "帮助与客服", "d": "帮助中心、在线客服与工单", "val": "有问题能找到人", "s": false, "ai": false}, {"n": "服务订单", "d": "服务类订单查看与跟进", "val": "服务可交付", "s": false, "ai": false}], "c": false}, {"n": "合同与电子签章", "v": "合同在线签，额度可关联", "f": [{"n": "框架合同", "d": "套用模板签署，归档并跟踪到期", "val": "长期合作不用寄合同", "s": true, "ai": false}, {"n": "电子签章授权", "d": "授权签章并留签署记录", "val": "合法签署", "s": false, "ai": false}, {"n": "售后授权", "d": "配置售后处理授权范围", "val": "少扯皮", "s": false, "ai": false}, {"n": "合同台账", "d": "汇总合同、额度与到期提醒", "val": "合同管得住", "s": false, "ai": false}], "c": true}, {"n": "专属服务", "v": "代客下单与大客户对接", "f": [{"n": "代客下单", "d": "运营代客户下单并留操作记录", "val": "小白客户", "s": false, "ai": false}, {"n": "专属客服", "d": "一对一对接人与工单", "val": "大客户", "s": false, "ai": false}], "c": false}]}, {"e": "AI 客服", "d": "群里接住询价、自动答复；把线索推回这四端", "c": "#475569", "bg": "#EFF2F6", "cl": "#A3AAB4", "m": [{"n": "群聊与客服接入", "v": "客户在微信里问，有人接", "c": false, "f": [{"n": "企微群聊记录存档", "d": "群里的对话全量存下来，事后可查", "val": "", "s": false, "ai": false}, {"n": "企微一对一会话", "d": "私聊也接得住，不漏单", "val": "", "s": false, "ai": false}, {"n": "微信客服进线", "d": "外部客户从客服入口进来", "val": "", "s": false, "ai": false}, {"n": "图片与文件自动存档", "d": "图纸、表格自动归到对应客户", "val": "", "s": false, "ai": false}]}, {"n": "看懂客户在说什么", "v": "分得清是闲聊还是要报价", "c": true, "f": [{"n": "10 类业务意图识别", "d": "报价、问价、催单、投诉分得开", "val": "", "s": false, "ai": false}, {"n": "报价意图单独拎出", "d": "要报价的单独一条线处理", "val": "", "s": false, "ai": false}, {"n": "表格、图纸、PDF 解析", "d": "附件里的型号能读出来", "val": "附件里的型号能直接读出来", "s": true, "ai": false}, {"n": "客户画像自动归档", "d": "按客户沉淀历史与证据", "val": "", "s": false, "ai": false}, {"n": "多轮对话跟得上", "d": "上下文不断片", "val": "", "s": false, "ai": false}]}, {"n": "自动回复", "v": "回复快、答得准、不刷屏", "c": false, "f": [{"n": "群聊全自动回复", "d": "常规问题不用人等", "val": "", "s": false, "ai": false}, {"n": "5 档处置", "d": "答 / 回执 / 待确认 / 澄清 / 不回", "val": "", "s": false, "ai": false}, {"n": "只发一次不刷屏", "d": "同样的话不重复发", "val": "", "s": false, "ai": false}, {"n": "回执与客户确认闭环", "d": "客户点头才算答完", "val": "", "s": false, "ai": false}]}, {"n": "报价需求转单", "v": "报价不再靠人盯群", "c": true, "f": [{"n": "报价需求自动识别", "d": "群里要报价的自动挑出来", "val": "群里要报价的不会漏掉", "s": true, "ai": false}, {"n": "报价单与图纸自动分类", "d": "需求和附件配到一起", "val": "", "s": false, "ai": false}, {"n": "自动推送报价系统", "d": "转成预填好的报价单", "val": "", "s": false, "ai": false}, {"n": "报价结果回传客户", "d": "报完自动发回群里", "val": "", "s": false, "ai": false}, {"n": "补充、取消、超时都处理", "d": "改单撤单不丢", "val": "", "s": false, "ai": false}]}, {"n": "转人工与人机协作", "v": "AI 答不上来不卡死", "c": true, "f": [{"n": "三类触发转人工", "d": "超时、连发、需人工", "val": "", "s": false, "ai": false}, {"n": "上下文打包给业务员", "d": "接手前先看聊天记录", "val": "人工接手，客户不用再说一遍", "s": true, "ai": false}, {"n": "人接管 AI 静默", "d": "人一说话 AI 让位", "val": "", "s": false, "ai": false}, {"n": "手机工作台一键发送", "d": "业务员在手机上回", "val": "", "s": false, "ai": false}, {"n": "升级链与兜底话术", "d": "没人接也有话顶着", "val": "", "s": false, "ai": false}]}, {"n": "响应督导", "v": "消息不掉进群里没人管", "c": false, "f": [{"n": "首响超时提醒", "d": "第一条回慢了就提醒", "val": "", "s": false, "ai": false}, {"n": "解决时限提醒", "d": "答没答完有时限", "val": "", "s": false, "ai": false}, {"n": "逐级升级到主管", "d": "超时往上找人", "val": "", "s": false, "ai": false}, {"n": "责任绑到人到群", "d": "每个群有人负责", "val": "", "s": false, "ai": false}, {"n": "漏回率单独治", "d": "漏掉的单独统计", "val": "", "s": false, "ai": false}]}, {"n": "话术库与工单", "v": "知识不散、问题有人跟", "c": false, "f": [{"n": "话术、问答、资料库", "d": "标准答法沉淀下来", "val": "", "s": false, "ai": false}, {"n": "内容调用统计", "d": "哪条话术真在用", "val": "", "s": false, "ai": false}, {"n": "四字段轻工单", "d": "一句话就能派活", "val": "", "s": false, "ai": false}, {"n": "任务下发与完成率", "d": "派了跟到底", "val": "", "s": false, "ai": false}, {"n": "行业模板预置", "d": "开箱就有可用话术", "val": "", "s": false, "ai": false}]}, {"n": "效果与开关", "v": "上了 AI 说得出值不值", "c": false, "f": [{"n": "四项 ROI 指标", "d": "省人力、响应快、漏回降、成交增", "val": "", "s": false, "ai": false}, {"n": "一个客户一个开关", "d": "随时能关", "val": "", "s": false, "ai": false}, {"n": "数据不出客户服务器", "d": "私钥与数据留在客户环境", "val": "", "s": false, "ai": false}, {"n": "风控分级预警", "d": "越界的先说", "val": "", "s": false, "ai": false}, {"n": "AI 与人工分组对照", "d": "用不用 AI 能比出差距", "val": "", "s": false, "ai": false}]}]}], FEATS=[["商家端 ERP", "商品与物料", "型号写法消歧", "同一个料号的不同写法能认成一条，搜得到也报得准"], ["商家端 ERP", "价格政策", "客户多点加价", "客户 × 分类树 × 多维度加点，协议价与活动价并存"], ["商家端 ERP", "报价与核价", "AI 识图直接出价", "图纸或清单上传即出可用报价，人工只复核异常"], ["商家端 ERP", "供应商协同", "供应商免登录回价", "一条链接发出去，供应商按统一格式回价，可横向比价"], ["运营端", "商品管理", "商品只审快照", "商家端是唯一写入方，平台只审挂牌快照与变更"], ["运营端", "套餐管理", "套餐即模块授权", "按模块与额度开通，下线一次全平台即时收回"], ["运营端", "类目与品牌", "平台统一主数据", "类目品牌只由平台写一次，向商家端单向推送只读"], ["门户商城", "询价与报价", "非标也能在线问价", "图纸上传即生成询价行，供应商统一格式回价"], ["门户商城", "交易与支付", "四种支付 + 担保", "在线、打款、转账、账期并存，确认收货后放款"], ["门户商城", "商品展示", "价格交期一屏可比", "价格、交期、起订量同屏对比，再决定问哪家"], ["买家中心", "财务与账期", "账期与授信", "额度内先货后款，下单占用额度、逾期提前预警"], ["买家中心", "合同与电子签章", "合同在线签", "框架合同在线签署，签署记录与合同台账统一留存"], ["买家中心", "会员与账号", "一账号多身份", "一个账号多组织，切换即换身份，数据严格隔离"], ["AI 客服", "看懂客户在说什么", "图纸表格都能读", "10 类意图分得开，附件里的型号能读出来"], ["AI 客服", "报价需求转单", "群聊直接转报价", "群里要报价自动识别，转成报价单推给商家"], ["AI 客服", "转人工与人机协作", "答不了连上下文转人", "超时或需人工时打包聊天记录交给业务员"]], ADV=[["AI 自动报价", "商家端 ERP", "独有", "报价依赖老师傅经验，出价周期以天计", "图纸与清单上传即出可用报价，人工只复核异常，报价响应从「天」到「分钟」"], ["千行 Excel 批改报价", "商家端 ERP", "独有", "逐条改价，几百行要改半天", "千行网格支持冻结列与拖选批改，异常价一键定位"], ["供应商免登录回价", "商家端 ERP", "独有", "供应商要先注册账号才能报价，很多干脆不来", "一条链接发出去，供应商按统一格式回价，可直接横向比价"], ["商品只审快照", "运营端", "更优", "平台与商家各维护一套商品，两边必然漂移", "商家端为唯一写入方，平台只审挂牌快照与变更，一处维护处处一致"], ["平台统一主数据", "运营端", "更优", "类目品牌两头维护，改一次要两头对齐", "平台唯一写入并向商家端单向推送只读，主数据不会分叉"], ["套餐即模块授权", "运营端", "独有", "按账号卖版本，功能边界靠口头约定", "按模块与额度组合开通，模块下线一次即全量收回"], ["非标图纸询价", "门户商城", "独有", "微信或邮件传图，人工核价、口径不一", "图纸与清单上传即生成询价行，供应商按统一格式回价"], ["物料清单整单询价", "门户商城", "独有", "一条一条问，清单越长越乱", "一张清单拆行配价，一次问完，不用逐条发起"], ["四种支付 + 担保", "门户商城", "更优", "只有在线支付，大额交易走线下、不留痕", "在线、打款、转账、账期并存，确认收货后放款，资金路径可追溯"], ["账期与授信", "买家中心", "独有", "线下赊账靠人情与账本，风险后知后觉", "平台核额、下单占用额度、逾期提前预警，账期变成可运营的规则"], ["合同在线签", "买家中心", "更优", "合同线下签，扫描件散在各处", "框架合同在线签署，签署记录与合同台账统一留存"], ["一账号多身份", "买家中心", "更优", "商家与买家两套账号，资料重复填", "一账号多组织，切换即换身份，数据严格隔离不串用"], ["群聊直接转报价单", "AI 客服", "独有", "群里问价靠人盯，漏一个丢一单", "报价意图自动识别，转成预填报价单推给商家，结果再回传客户"], ["答不了连上下文转人", "AI 客服", "更优", "机器人答不上来就断线，客户重新说一遍", "超时或需人工时打包聊天记录交给业务员，人一接手 AI 立即静默"], ["数据不出客户服务器", "AI 客服", "独有", "会话数据上云，客户不放心", "单机部署，私钥与会话数据不出客户环境，随时可关"], ["三端同一数据源", "全平台", "更优", "前台后台两套数据，运营看到的是隔夜快照", "运营、门户、买家中心共用一套商品与订单数据，所见即所卖"], ["结算规则可配", "全平台", "更优", "平台代收代付，存在二清与合规风险", "平台只定分账规则，结算由商家端执行，规避资金池"], ["争议平台裁决", "全平台", "独有", "买卖自行协商，结果不留档", "举证、裁决、执行与归档在平台完成，处理过程可回溯"]];
+let FILTER='', MODE='all', EXPAND=false, VIEW='over';
+const app=document.getElementById('app'), cnt=document.getElementById('cnt');
+const MAXF=Math.max(...DATA.map(e=>e.m.reduce((a,m)=>a+m.f.length,0)));
+const endsBox=document.getElementById('ends'), featsBox=document.getElementById('feats'), dualBox=document.getElementById('dual'), expBtn=document.getElementById('expand');
+const ALL={e:'全部端',c:'#1F3864',cl:'#B3BFD3',bg:'#EDF1F8'};
+endsBox.innerHTML=`<button class="on" data-e="" style="--c:${ALL.c};--cl:${ALL.cl};--bg:${ALL.bg}"><i></i>${ALL.e}</button>`
+  +DATA.map(e=>`<button data-e="${e.e}" style="--c:${e.c};--cl:${e.cl};--bg:${e.bg}"><i></i>${e.e}</button>`).join('');
+document.getElementById('fg').innerHTML=FEATS.map(f=>`<div class="fc"><div class="t"><span>${f[2]}</span><span class="e">${f[0]} · ${f[1]}</span></div><div class="d">${f[3]}</div></div>`).join('');
+function kw(){return document.getElementById('q').value.trim()}
+function hl(t){const k=kw();if(!k)return t;
+  return String(t||'').replace(new RegExp('('+k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<span class="hit">$1</span>')}
+function hitMod(md){const k=kw().toLowerCase();
+  if(MODE==='feat'&&!md.c)return false;
+  if(!k)return true;
+  return (md.n+' '+(md.v||'')+' '+md.f.map(f=>f.n+' '+f.d).join(' ')).toLowerCase().includes(k)}
+function openNow(md){const k=kw().toLowerCase(); if(EXPAND)return true;
+  return !!k && md.f.some(f=>(f.n+' '+f.d).toLowerCase().includes(k))}
+function render(){
+  const bar=document.getElementById('mode');
+  if(VIEW==='adv'||VIEW==='collab'){
+    app.className='';app.innerHTML=VIEW==='adv'?advHtml():collabHtml();
+    if(cnt)cnt.textContent='';expBtn.style.display='none';bar.style.display='none';
+    if(VIEW==='adv'){app.insertBefore(featsBox,app.firstChild);featsBox.style.display='';}else{featsBox.style.display='none';}
+    dualBox.style.display='none';
+    return}
+  bar.style.display='';expBtn.style.display='';featsBox.style.display='none';dualBox.style.display='';
+  app.className='board';app.innerHTML='';
+  let n=0, nf=0, html='';
+  DATA.forEach(e=>{
+    const mods=e.m.filter(md=>{const v=hitMod(md);if(v){n++;nf+=md.f.length}return v});
+    if(!mods.length&&MODE==='feat')return;
+    const dim=FILTER&&FILTER!==e.e?' dim':'';
+    const hot=FILTER&&FILTER===e.e?' hot':'';
+    html+=`<section class="col${dim}${hot}" style="--c:${e.c};--bg:${e.bg};--cl:${e.cl}">
+      <div class="chead" data-e="${e.e}" title="只看 ${e.e}">
+        <div class="r1"><h2>${e.e}</h2><span class="num">${e.m.length} 类目 · ${e.m.reduce((a,m)=>a+m.f.length,0)} 项</span></div>
+        <p>${e.d}</p><div class="wt"><i style="width:${Math.round(e.m.reduce((a,m)=>a+m.f.length,0)/MAXF*100)}%"></i></div></div>
+      <div class="mods">${mods.map(md=>`<article class="mod${md.c?' feat':''}${openNow(md)?' open':''}" role="button" tabindex="0" aria-expanded="${openNow(md)?'true':'false'}">
+        <div class="mh"><span class="nm">${hl(md.n)}</span>${md.c?'<span class="kf">特色</span>':''}
+          <span class="sp"></span><span class="ct">${md.f.length} 项</span><span class="arw">▸</span></div>
+        <div class="mv">${hl(md.v)}</div>
+        <div class="fl">${md.f.map(f=>`<div class="f${f.s?' s':''}" title="${f.val?('解决什么：'+f.val):''}">
+          <div class="t"><span>${hl(f.n)}</span>${f.ai?'<span class="ai">AI</span>':''}</div>
+          <div class="d">${hl(f.d)}</div>${f.s&&f.val?`<div class="v">${hl(f.val)}</div>`:''}</div>`).join('')}</div>
+      </article>`).join('')||'<div class="hint" style="padding:var(--sp-5) 0">没有匹配的类目</div>'}</div>
+    </section>`;
+  });
+  app.innerHTML=html;
+  
+  bindMods();
+}
+function bindMods(){
+  app.querySelectorAll('.mod').forEach(m=>{
+    const t=()=>{m.classList.toggle('open');m.setAttribute('aria-expanded',m.classList.contains('open'))};
+    m.addEventListener('click',t);
+    m.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();t()}});
+  });
+  app.querySelectorAll('.chead').forEach(h=>h.addEventListener('click',()=>{FILTER=(FILTER===h.dataset.e)?'':h.dataset.e;syncEnds();render()}));
+}
+function advHtml(){
+  const T={独有:'u',更优:'b',新增:'n'};
+  return `<div class="panel"><h3>我们与常规做法 / 其他商城的差异 <small>${ADV.length} 条，每条都写成「常规怎么做 → 我们怎么做」</small></h3>
+  <div class="advh"><span>能力</span><span>所属端</span><span>类型</span><span>常规做法</span><span>我们的做法</span></div>
+  ${ADV.map(a=>`<div class="advr"><b>${a[0]}</b><span class="ed">${a[1]}</span><span><i class="tag ${T[a[2]]||'b'}">${a[2]}</i></span><span class="old">${a[3]}</span><span class="new">${a[4]}</span></div>`).join('')}
+  </div>
+  <div class="panel"><h3>三个落地场景</h3>
+  <div class="scg">
+    <div class="sc"><div class="no">01</div><div class="nm">成形公供需对接</div>
+      <dl><dt>痛点</dt><dd>设备档期不透明，靠熟人打听</dd>
+          <dt>解法</dt><dd>设备建档 → 档期匹配 → 撮合成交</dd></dl>
+      <div class="gain">设备稼动率 ↑15%<em>内部测算</em></div></div>
+    <div class="sc"><div class="no">02</div><div class="nm">模架标准化集采</div>
+      <dl><dt>痛点</dt><dd>单厂议价弱，规格口径不统一</dd>
+          <dt>解法</dt><dd>统一规格 → 聚合需求 → 年度锁价</dd></dl>
+      <div class="gain">采购成本 ↓10%~20%<em>内部测算</em></div></div>
+    <div class="sc"><div class="no">03</div><div class="nm">C 类物料一站式撮合</div>
+      <dl><dt>痛点</dt><dd>规格散、单值低、批量散、难找</dd>
+          <dt>解法</dt><dd>参数入库 → 一单多品 → 智能匹配</dd></dl>
+      <div class="gain">长尾品类一次报全<em>内部测算</em></div></div>
+  </div>
+  </div>`;
+}
+function collabHtml(){
+  return `<div class="panel"><h3>五端怎么协作 ｜ 谁写、谁读、谁裁决</h3>
+  <div class="grid5"><span>环节</span><span>商家端 ERP</span><span>平台运营端</span><span>门户商城 / 买家中心</span><span>平台角色</span></div>
+  <div class="row5"><b>商品</b><span>建商品、提交挂牌</span><span>审快照、定类目品牌</span><span>看商品卡与详情</span><em>审与放行</em></div>
+  <div class="row5"><b>报价</b><span>报价、核价、回价</span><span>定加价与指导价口径</span><span>询价、比价、接受报价</span><em>定规则</em></div>
+  <div class="row5"><b>订单</b><span>接单、发货、售后</span><span>只读监督、超时指派</span><span>下单、跟踪、退换</span><em>监督与裁决</em></div>
+  <div class="row5"><b>资金</b><span>开票、对账、账期执行</span><span>佣金分账、退款审批</span><span>付款、账单、授信申请</span><em>定规则 + 审批</em></div>
+  <div class="row5"><b>纠纷</b><span>举证、执行裁决</span><span>收集举证、裁决、归档</span><span>申诉、看进度</span><em>裁决方</em></div>
+  <div class="row5"><b>AI</b><span>报价单接收</span><span>预审与配置</span><span>群聊自动应答与报价回传</span><em>能力供给</em></div>
+  </div>
+  <div class="panel"><h3>各端职责边界 <small>会议已定口径</small></h3>
+  <div class="gridB"><span>端</span><span>做什么</span><span>不做什么</span></div>
+  <div class="rowB"><b>商家端 ERP</b><span>商家侧全部业务操作：商品、价格、报价、采购、库存、发货、结算、对账</span><span class="no">不自定平台规则；不承载平台侧的管控与审核</span></div>
+  <div class="rowB"><b>平台运营端</b><span>全局配置 / 审核管控 / 数据查看</span><span class="no">不重复商家的业务执行（打单发货、出入库作业、售后处理）</span></div>
+  <div class="rowB"><b>门户商城 · 买家中心</b><span>浏览、搜索、询价、下单、账期、合同</span><span class="no">不直接操作商家后台</span></div>
+  <div class="src">口径来源：ERP 融合口径会（2026-10）</div>
+  </div>
+  <div class="panel"><h3>一句话记法</h3>
+  <div class="rowB" style="grid-template-columns:1fr"><span><b>平台定规则、审快照、管资金</b>；<b>ERP 做业务执行</b>；<b>买家在门户看货、在买家中心下单</b>；<b>AI 接住群聊询价，把线索推回这条链</b>。两边共用同一套主数据，平台侧对 ERP 只读不写。</span></div>
+  </div>`;
+}
+function syncEnds(){endsBox.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x.dataset.e===FILTER))}
+document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>{VIEW=b.dataset.v;
+  document.querySelectorAll('#tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');render()});
+document.querySelectorAll('#mode button').forEach(b=>b.onclick=()=>{MODE=b.dataset.m;
+  document.querySelectorAll('#mode button').forEach(x=>x.classList.remove('on'));b.classList.add('on');render()});
+endsBox.querySelectorAll('button').forEach(b=>b.onclick=()=>{FILTER=b.dataset.e;syncEnds();
+  VIEW='over';document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('on',x.dataset.v==='over'));render()});
+expBtn.onclick=e=>{EXPAND=!EXPAND;e.target.classList.toggle('on',EXPAND);
+  e.target.textContent=EXPAND?'全部折叠':'全部展开';render()};
+document.getElementById('q').oninput=()=>{if(VIEW!=='over'){VIEW='over';
+  document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('on',x.dataset.v==='over'))}render()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')app.querySelectorAll('.mod.open').forEach(c=>{
+  c.classList.remove('open');c.setAttribute('aria-expanded','false')})});
+render();
+</script></body></html>
